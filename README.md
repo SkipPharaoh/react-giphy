@@ -1,106 +1,70 @@
-# React Giphy
+# Getting Started with Create React App
 
-**In this deliverable we will practice the following:**
-* Sharing data through prop drilling
-* Updating and lifting state
-* Calling APIs w/ fetch
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- *Before getting started:* Take a look at the [completed app here](https://react-giphy-app.herokuapp.com/).
+## Available Scripts
 
-## Part 1
-In part 1, you will be creating an app that mirrors the app above, but before we integrate the Giphy API, we'll stub out the application skeleton and use placeholder JSON data to make mock API calls.
+In the project directory, you can run:
 
-### App Structure
-Build an app with the following component hierarchy: 
-```
-|--Home
------SearchContainer
----------Search
----------Results
-```
+### `npm start`
 
-The components should do the following: 
-- `Home`: Render header and visual layout + child `SearchContainer` component;
-- `SearchContainer`: Render Search and Results child components; 
-- `Search`: Render input tag for user to search for gifs. 
-- `Results`: Represents the container for all result gifs.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Data and Data Search:
-Your app should take a user input and "query" the API.
+### `npm test`
 
-We haven't actually connected the API yet, so instead use the following sample JS object to mockup your JSX.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-<details><summary>Click for js object</summary>
+### `npm run build`
 
-```js
-{
-  "data": [
-    {
-      "type": "gif",
-      "id": "iuHaJ0D7macZq",
-      "url": "http://giphy.com/gifs/cat-day-tomorrow-iuHaJ0D7macZq",
-      "source": "https://www.reddit.com/r/CatGifs/comments/5f0h9a/tomorrow_is_legs_day/",
-      "rating": "pg",
-      "images": {
-        "fixed_height": {
-          "url": "http://media4.giphy.com/media/iuHaJ0D7macZq/200.gif"
-        }
-      }
-    },
-    {
-      "type": "gif",
-      "id": "Z1kpfgtHmpWHS",
-      "url": "http://giphy.com/gifs/cat-way-make-Z1kpfgtHmpWHS",
-      "source": "http://shewhoseeks.blogspot.com/2016/03/cat-gifs-that-make-me-laugh-way-more.html",
-      "rating": "g",
-      "images": {
-        "fixed_height": {
-          "url": "http://media4.giphy.com/media/Z1kpfgtHmpWHS/200.gif"
-        }
-      }
-    }
-  ],
-  "meta": {
-    "status": 200,
-    "msg": "OK"
-  },
-  "pagination": {
-    "total_count": 1947,
-    "count": 25,
-    "offset": 0
-  }
-}
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-</details>
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Building the App
-In building this app you will have to consider the following: 
-* How to capture user input data in a form/input field in React. 
-* Using `state` in React to keep tracking of changing data values. 
-* Rendering data in child components through prop drilling. 
-* "Lifting" state to belong to the most common ancestor component, `SearchContainer`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-In the second part of our app we will update our search to query the Giphy API proper, not our static JS object. 
+### `npm run eject`
 
-## Part 2
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Search the Giphy API
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- With the API we're using, you will need to [register for an API key](https://developers.giphy.com/). The API key is free, and only takes a minute or two to setup.
-- Browse through the [API documentation](https://developers.giphy.com/docs/api#quick-start-guide) to determine which endpoints are best suited for our use case, as well as how to use them.
-- We're going to be searching the Giphy API based on a word or phrase to return a collection of results.
-- Use `fetch` to make an HTTP request to the API search endpoint with the user's query.
-- Pass the data to the `Results` component to be displayed.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Hungry for more?
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- What if instead of querying the Giphy API by clicking on the 'Submit' button, we could instead have the app query the API right as we type into the search bar?
+## Learn More
 
-- Lets get rid of Search button and call the external API whenever User enters a string to search. (Hint: you may have to make some changes in `onChange`).
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- Once you have that working, now notice that the your app is now querying the API literally EVERY time you type, making many many more API requests than you may want to.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- Look into the terms "Trottle" and "Debounce". How might we limit the number of API requests we make, such that we only query the API once the user is finished typing?
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
