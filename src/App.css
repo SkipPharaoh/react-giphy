@@ -1,1 +1,10 @@
+nav {
+    display: flex;
+    justify-content: flex-start;
+    color: snow;
+    background-color: rgb(52, 58, 64);
+}
+.Search {
+    text-align: center;
+}
 
