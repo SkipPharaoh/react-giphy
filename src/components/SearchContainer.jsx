@@ -4,7 +4,8 @@ import Search from "./Search";
 function SearchContainer(){
     return(
         <>
-            <h1>Search Container Component Rendered</h1>
+            <h2>Giphy Search</h2>
+            <p>The true source for all things giphy</p>
             <Search />
             <Results />
         </>

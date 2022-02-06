@@ -3,7 +3,10 @@
 function Search(){
     return(
         <>
-            <h1>Search Component Rendered</h1>
+            <form className="search">
+                <input type="search" className="input" placeholder="Search..." />
+                <button>Search</button>
+            </form>
         </>
     )
 }

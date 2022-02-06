@@ -3,7 +3,7 @@
 function Results(){
     return(
         <>
-            <h1>Results Component Rendered</h1>
+            <h3>Results Component Rendered</h3>
         </>
     )
 }
