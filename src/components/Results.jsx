@@ -1,12 +1,17 @@
 import React, {useState} from 'react'
-import Search from './Search'
 
 const Results = (props) => {
-    console.log(props.gif.data)
+    // console.log(props)
+    const ArrResults = props.results.map((giph, idx) => {
+        console.log(giph)
+        return <img src={giph.images.fixed_height.url} key={idx} />
+    })
+
+
     return(
         <>
-            <h3>Results Component Rendered</h3>
-            {/* {props.gif.data[0].url} */}
+            <p>Giphy</p>
+            {ArrResults}
         </>
     )
 }

@@ -1,28 +1,19 @@
-import React, {useState} from 'react'
-import Results from './Results'
+import React, {useState, useEffect} from 'react'
 import './Search.css'
 
 function Search(props){
-    const [search, setSearch] = useState("")
 
     const HandleSearchChange = (evt)=>{
-        setSearch(evt.target.value)
-        console.log(evt.target.value)
+        props.setSearch(evt.target.value)
+        // console.log(evt.target.value)
     }
+    // console.log(props)
 
     const HandleSearch = (evt)=> {
+        props.getGif(props.search)
         evt.preventDefault()
     }
-    const HandleResults = () => {
-        for (let i=0; i < props.gif.data.length; i++) {
-            // if (props.gif.data[i].id == search){
-                console.log(props.gif.data[i].images.fixed_height.url)
-                return (props.gif.data[i].url)
-            // } else {
-                // console.log("Nothing")
-            // }
-        }
-    }
+
 
     return(
         <>
@@ -34,10 +25,10 @@ function Search(props){
                     type="search"
                     id="search"
                     placeholder="Search..." 
-                    value={search}
+                    value={props.search}
                     onChange={HandleSearchChange}
                 />
-                <button onClick={HandleResults}>Search</button>
+                <button >Search</button>
             </form>
         </>
     )
